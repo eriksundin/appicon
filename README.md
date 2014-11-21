@@ -1,29 +1,45 @@
-# Appicon
+Do you think it's annoying having to drag and drop images in your iOS app Asset Catalog
+every time an icon changes? Did you get the right image on the right size?
+Do you think it's a pain in the ass dealing with lots of sizes of the icon?
+Do you think these things could be automated?
 
-TODO: Write a gem description
+*Yes, they can be.*
+
+## About
+
+The appicon gem lets you only ever care about one icon, eg. the 1024x1024 iTunes version.
+The tool will check which sizes you have set up for your app icon in your Asset Catalog,
+generate all those icons for you and install them in your Asset Catalog. Done.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'appicon'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
+```
     $ gem install appicon
+```
+
+Appicon uses ImageMagick for image conversion. Download and install ImageMagick from http://www.imagemagick.org.
+Not sure if you have it installed already? Check:
+
+```
+    $ convert --version
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+appicon install <sourceIcon> <assetCatalog>
 
-## Contributing
+```
+    $ appicon install iTunesIcon-1024x1024.png path/to/Images.xcassets
+```
 
-1. Fork it ( http://github.com/<my-github-username>/appicon/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+## Contact
+
+Found a bug or missing something? Let me know, or even better, file a pull request!
+
+Erik Sundin
+
+- erik@eriksundin.se
+
+## License
+
+Appicon gem is available under the MIT license. See the LICENSE file for more info.
