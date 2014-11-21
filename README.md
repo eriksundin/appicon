@@ -26,8 +26,6 @@ Not sure if you have it installed already? Check:
 
 ## Usage
 
-appicon install <sourceIcon> <assetCatalog>
-
 ```
     $ appicon install iTunesIcon-1024x1024.png path/to/Images.xcassets
 ```
