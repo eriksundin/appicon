@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'commander/import'
+
+$:.push File.expand_path("../../lib", __FILE__)
+require 'appicon'
+
+program :version, Appicon::VERSION
+program :description, 'Generate iOS App icons from a high resolution source.'
+
+program :help, 'Author', 'Erik Sundin <erik@eriksundin.se>'
+program :help, 'Website', 'http://github.com/eriksundin'
+program :help_formatter, :compact
+
+default_command :help
+
+require 'appicon/commands'
