@@ -1,4 +1,5 @@
 require 'json'
+require 'shellwords'
 
 command :'install' do |c|
   c.syntax = "appicon install [icon] [asset catalog]"
@@ -35,7 +36,7 @@ command :'install' do |c|
 
       # Generate each icon
       puts "Generating #{image_size} @ #{image_scale}."
-      if system("convert #{@icon} -resize #{scaled_image_side}x#{scaled_image_side} #{scaled_image_output}")
+      if system("convert #{@icon.shellescape} -resize #{scaled_image_side}x#{scaled_image_side} #{scaled_image_output.shellescape}")
 
         # Remove old icons that are not used any more
         previous_icon = image['filename']
