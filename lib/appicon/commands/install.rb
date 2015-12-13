@@ -30,7 +30,7 @@ command :'install' do |c|
       image_size = image['size']
       image_scale = image['scale']
 
-      scaled_image_side = image_size.split('x').first.to_i * image_scale.sub('x', '').to_i
+      scaled_image_side = Integer(image_size.split('x').first.to_f * image_scale.sub('x', '').to_f)
       scaled_image_name = "Icon-#{image_size}-@#{image_scale}#{File.extname(@icon)}"
       scaled_image_output = File.join(@icon_set, scaled_image_name)
 
